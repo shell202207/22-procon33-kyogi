@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>テスト</title>
+    <link rel="stylesheet" href="https://pyscript.net/alpha/pyscript.css" />
+    <script defer src="https://pyscript.net/alpha/pyscript.js"></script>
+
+</head>
+<body>
+    <py-script>
+      words=[
+    'J01あさまのいたづらおにのおしだし',
+    'J02いかほおんせんにほんのめいとう',
+    'J03うすいとうげのせきしょあと',
+    'J04えんぎだるまのしょうりんざん',
+    'J05おおたかなやまこそだてどんりゅう',
+    'J06かんとうとしんえつつなぐたかさきし',
+    'J07きりゅうはにほんのはたどころ',
+    'J08くさつよいとこくすりのいでゆ',
+    'J09けんとまえばしいとのまち',
+    'J10こころのとうだいうちむらかんぞう',
+    'J11さんばせきとともになだかいふゆざくら',
+    'J12しのぶけのくにふたごづか',
+    'J13すそのはながしあかぎやま',
+    'J14せんきょうおぜぬまはなのはら',
+    'J15そろいのしたくでやぎぶしおんど',
+    'J16たきはふきわりかたしなけいこく',
+    'J17ちからあわせる190まん',
+    'J18つるまうかたちのぐんまけん',
+    'J19てんかのぎじんもざえもん',
+    'J20とねはばんどういちのかわ',
+    'J21なかせんどうしのぶあんなかすぎなみき',
+    'J22にほんでさいしょのとみおかせいし',
+    'J23ぬまたじょうかのしおばらたすけ',
+    'J24ねぎとこんにゃくしもにためいさん',
+    'J25のぼるはるなのきゃんぷむら',
+    'J26はなやまこうえんつつじのめいしょ',
+    'J27びゃくいかんのんじひのみて',
+    'J28ぶんぶくちゃがまのもりんじ',
+    'J29へいわのつかいにいじまじょう',
+    'J30ほこるぶんごうたやまかたい',
+    'J31まゆときいとはにほんいち',
+    'J32みなかみたにがわすきーととざん',
+    'J33むかしをかたるたごのこひ',
+    'J34めいせんおりだすいせさきし',
+    'J35もみじにはえるみょうぎさん',
+    'J36やばけいしのぐあがつまきょう',
+    'J37ゆかりはふるしぬきさきじんじゃ',
+    'J38よのちりあらうしまおんせん',
+    'J39らいとからっかぜぎりにんじょう',
+    'J40りそうのでんかにでんげんぐんま',
+    'J41るーぷでなだかいしみずとんねる',
+    'J42れきしになだかいにったよしさだ',
+    'J43ろうのうふなつでんじべい',
+    'J44わさんのたいかせきこうわ',
+    'E02oneofthemostfamoushotspringsinjapnikahoonsen',
+    'E43apioneerinfarmingfunatsudenjibel',
+    'E26abeautifulspotforazaleashanayamapark',
+    'E22japansfirstsilkfactorytomiokasilkmill',
+    'E30agreatjapanesewritertayamakatai',
+    'E29awisechristianeducatorniijimajo'
+    'E20thelongestriverinkantothetoneriver',
+    'E17twomillionworkingtogethergunmaspeople',
+    'E40energyfromwatergunmaselectricity',
+    'E23asuccessfulhardwokerfromoldnumatashiobaratasuke',
+    'E41wellknownloopingrailwayshimizutunnel',
+    'E44themasterofjapanesemathsekikowa',
+    'E06joiningkantoandshinetsutakasakicity',
+    'E38healingmindandbodyshimaonsen',
+    'E16dynamicwaterfallsfukiwareinthekatashinavalley',
+    'E42abravesamuraileaderinhistorynittayoshisada',
+    'E15everyonedancingasonetotheyagibushifolksong',
+    'E18sharpedlikeaflyingcranegunmaprefecture',
+    'E24leeksandkonnyakulocalfoodsofshimonita',
+    'E21linedcedartreesinannakaremindusofnakasendo',
+    'E39thunderandstrongwindsdutyandkindnessingunma',
+    'E33tellingusaboutoldtimestagostonemonument',
+    'E03acheckpointfromlongagousuipass',
+    'E25aperfectplacetohikeandcampmtharuna',
+    'E05wishingchildrenhappinesspriestdonryuofkanayamaota',
+    'E08thecuringwatersofkusatsuonsen',
+    'E36asceneofrarebeautyagatsumacanyon',
+    'E31thetopproducerofcocoonsandsilkinjapan',
+    'E09thecapitalofgunmaandcityofsilkmaebashi',
+    'E28theraccoondogbringsgoodluckatmorinjitemple',
+    'E10aleadingchristianthinkeruchimurakanzo',
+    'E04luckydarumadollsatshorinzan',
+    'E19aheroforpoorpeoplemozaemon',
+    'E01awesomepowerofmtasamamagmastonesatonioshidashi',
+    'E11wintercherryblossomsandsanbarocksbeautifulsightstosee',
+    'E07thecenteroftheweavingindustryinjapankiryucity',
+    'E37respectedsinceancienttimesnukisakishrine',
+    'E34thehomeofmeisensilkisesakicity',
+    'E32wonderfulplacestoskiandclimbminakamiandtanigawa',
+    'E12bringingbackthedayslongpastthefutagozukaremains',
+    'E27givingcomforttothepeoplekannonstatue',
+    'E35glowingwithautumncolorsmtmyogi',
+    'E14treasureofnaturalbeautyozenationalpark'
+    'E13spreadingwidelythegentleslopesofmtakagi'
+    ]
+    search_word=input("検索キーワード＝")
+    for i in words:
+      if search_word in i:
+        print(i)
+    </py-script>
+
+</body>
+</html>
